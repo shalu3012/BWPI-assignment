@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #form {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="form">
+            <label for="sentence">Enter a sentence</label>
+            <input type="text" name="" id="sentence">
+            <label for="letter">Enter a letter</label>
+            <input type="text" name="" id="letter">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="output"></div>
+    </div>
+    <script>
+        let sentence = document.getElementById('sentence');
+        let letter = document.getElementById('letter');
+        let form = document.getElementById('form');
+        let output = document.getElementById('output');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const index = sentence.value.indexOf(letter.value)
+            const result = sentence.value.slice(index + 1)
+            output.innerHTML = result
+        })  
+    </script>
+</body>
+
+</html>
